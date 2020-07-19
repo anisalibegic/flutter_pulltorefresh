@@ -49,9 +49,9 @@ import 'package:flutter/widgets.dart';
 /// 3. update delegate a method "isSupported"
 /// ```dart
 ///   @override
-//  bool isSupported(Locale locale) {
-//    return ['en', 'zh', 'fr', 'ru', 'uk','xx'].contains(locale.languageCode);
-//  }
+///  bool isSupported(Locale locale) {
+///    return ['en', 'zh', 'fr', 'ru', 'uk','xx'].contains(locale.languageCode);
+///  }
 /// ```
 ///
 /// see #175 to find more details
@@ -74,6 +74,8 @@ class RefreshLocalizations {
     'uk': UkRefreshString(),
     'it': ItRefreshString(),
     'ja': JpRefreshString(),
+    'bs': BsRefreshString(),
+    'hr': HrRefreshString(),
   };
 
   RefreshString get currentLocalization {
@@ -97,7 +99,7 @@ class RefreshLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) {
-    return ['en', 'zh', 'fr', 'ru', 'uk', 'ja', 'it']
+    return ['en', 'zh', 'fr', 'ru', 'uk', 'ja', 'it', 'bs', 'hr']
         .contains(locale.languageCode);
   }
 
@@ -293,7 +295,7 @@ class RuRefreshString implements RefreshString {
   String refreshingText = "Обновление…";
 }
 
-// Ukrainian
+/// Ukrainian
 class UkRefreshString implements RefreshString {
   @override
   String canLoadingText = "Відпустіть, щоб завантажити більше";
@@ -399,4 +401,76 @@ class JpRefreshString implements RefreshString {
 
   @override
   String refreshingText = "更新中…";
+}
+
+/// Bosnian
+class BsRefreshString implements RefreshString {
+  @override
+  String canLoadingText = "Pustite da učitate više";
+
+  @override
+  String canRefreshText = "Pustite da osvježite";
+
+  @override
+  String canTwoLevelText = "Pustite da uđete u secondfloor";
+
+  @override
+  String idleLoadingText = "Povucite da učitate više";
+
+  @override
+  String idleRefreshText = "Povucite da osvježite";
+
+  @override
+  String loadFailedText = "Učitavanje neuspješno";
+
+  @override
+  String loadingText = "Učitavam";
+
+  @override
+  String noMoreText = "Nema podataka za učitavanje";
+
+  @override
+  String refreshCompleteText = "Osvježavanje završeno";
+
+  @override
+  String refreshFailedText = "Osvježavanje neuspješno";
+
+  @override
+  String refreshingText = "Osvježavam";
+}
+
+/// Croatian
+class HrRefreshString implements RefreshString {
+  @override
+  String canLoadingText = "Pustite da učitate više";
+
+  @override
+  String canRefreshText = "Pustite da osvježite";
+
+  @override
+  String canTwoLevelText = "Pustite da uđete u secondfloor";
+
+  @override
+  String idleLoadingText = "Povucite da učitate više";
+
+  @override
+  String idleRefreshText = "Povucite da osvježite";
+
+  @override
+  String loadFailedText = "Učitavanje neuspješno";
+
+  @override
+  String loadingText = "Učitavam";
+
+  @override
+  String noMoreText = "Nema podataka za učitavanje";
+
+  @override
+  String refreshCompleteText = "Osvježavanje završeno";
+
+  @override
+  String refreshFailedText = "Osvježavanje neuspješno";
+
+  @override
+  String refreshingText = "Osvježavam";
 }
