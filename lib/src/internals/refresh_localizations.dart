@@ -80,8 +80,11 @@ class RefreshLocalizations {
 
   RefreshString get currentLocalization {
     if (values.containsKey(locale.languageCode)) {
+      print('No locale: ${locale.languageCode}');
       return values[locale.languageCode];
     }
+    
+    print('Using default');
     return values["en"];
   }
 
